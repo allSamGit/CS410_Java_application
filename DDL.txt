@@ -1,0 +1,103 @@
+DROP DATABASE IF EXISTS Library;
+CREATE DATABASE Library;
+use Library;
+
+CREATE TABLE Publishers (
+    Name_ varchar(50) NOT NULL,
+	Address varchar(100) NULL,
+    Phone varchar(15) NULL
+) ;
+CREATE TABLE Library_Branches (
+	BranchId bigint NOT NULL DEFAULT 0,
+    BranchName Varchar(50) NULL
+) ;
+CREATE TABLE Borrowers (
+    CardNo bigint NOT NULL DEFAULT 0,
+    Name_ varchar(50) NULL,
+	Address varchar(100) NULL,
+    Phone varchar(15) NULL
+) ;
+CREATE TABLE Books (
+	BookId bigint NOT NULL DEFAULT 0 ,
+    AuthorName varchar(50) NULL,
+    Title varchar(100) NULL,
+    Name_ varchar(50) NOT NULL
+) ;	
+CREATE TABLE Book_Copies (
+	BookCopyId bigint(20) NOT NULL DEFAULT 0,
+	NoOfCopies smallint NULL,
+	BookId bigint NOT NULL DEFAULT 0 ,
+	BranchId bigint NOT NULL DEFAULT 0
+) ;
+CREATE TABLE Book_Loans (
+	BookLoanId bigint NOT NULL DEFAULT 0,
+    DateOut Date NULL,
+    DueDate Date NULL,
+	BranchId bigint NOT NULL,
+	BookId bigint NOT NULL,
+    CardNo bigint NOT NULL
+) ;
+-- Primary keys 
+ALTER TABLE Publishers ADD
+	CONSTRAINT Publishers_PK PRIMARY KEY ( Name_ );
+create index Publishers on Publishers(Name_);
+
+
+ALTER TABLE Library_Branches ADD
+	CONSTRAINT Library_Branches_PK PRIMARY KEY	( BranchId ) ;
+ALTER TABLE Library_Branches modify column BranchId bigint AUTO_INCREMENT;
+ALTER TABLE Library_Branches AUTO_INCREMENT = 101;
+create index Library_Branches on Library_Branches(BranchId);
+
+ALTER TABLE Borrowers ADD
+	CONSTRAINT Borrowers_PK PRIMARY KEY ( CardNo ) ;
+ALTER TABLE Borrowers modify column CardNo bigint AUTO_INCREMENT;
+ALTER TABLE Borrowers AUTO_INCREMENT = 1001;
+create index Borrowers on Borrowers(CardNo);
+
+ALTER TABLE Books ADD
+	CONSTRAINT Books_PK PRIMARY KEY	( BookId ) ;
+ALTER TABLE Books modify column BookId bigint AUTO_INCREMENT;
+ALTER TABLE Books AUTO_INCREMENT = 100001;
+create index Books01 on Books(BookId);
+
+ALTER TABLE Book_Copies ADD
+	CONSTRAINT Book_Copies_PK  PRIMARY KEY ( BookCopyId ) ;
+ALTER TABLE Book_Copies modify column BookCopyId bigint(20) AUTO_INCREMENT;
+ALTER TABLE Book_Copies AUTO_INCREMENT = 1000001;
+create index Book_Copies01 on Book_Copies(BookCopyId);
+    
+ALTER TABLE Book_Loans ADD
+	CONSTRAINT Book_Loans_PK PRIMARY KEY ( BookLoanId );
+ALTER TABLE Book_Loans modify column BookLoanId bigint AUTO_INCREMENT;
+ALTER TABLE Book_Loans AUTO_INCREMENT = 10001;
+create index Book_Loans01 on Book_Loans(BookLoanId); 
+
+-- Foreign keys
+ALTER TABLE Books ADD
+	CONSTRAINT Books_FK00 FOREIGN KEY ( Name_ ) REFERENCES Publishers ( Name_ ) ;
+create index Books02 on Books(Name_);
+
+ALTER TABLE Book_Copies ADD
+	CONSTRAINT Book_Copies_FK00 FOREIGN KEY
+	( BookId ) REFERENCES Books ( BookId ),    
+	ADD CONSTRAINT Book_Copies_FK01 FOREIGN KEY
+	( BranchID ) REFERENCES Library_Branches ( BranchID );
+create index Book_Copies02 on Book_Copies(BookId);
+create index Book_Copies03 on Book_Copies(BranchID);
+    
+ALTER TABLE Book_Loans ADD
+	CONSTRAINT Book_Loans_FK00 FOREIGN KEY
+	( BookId ) REFERENCES Books ( BookId ),
+	ADD CONSTRAINT Book_Loans_FK01 FOREIGN KEY
+	( BranchID ) REFERENCES Library_Branches ( BranchID ),
+	ADD CONSTRAINT Book_Loans_FK02 FOREIGN KEY
+	( CardNo ) REFERENCES Borrowers ( CardNo );
+create index Book_Loans02 on Book_Loans(BookId);
+create index Book_Loans03 on Book_Loans(BranchID);
+create index Book_Loans04 on Book_Loans(CardNo);
+
+create fulltext index Title on Books(Title);
+create index Phone using hash on  Borrowers(Phone);
+
+

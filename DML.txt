@@ -1,0 +1,63 @@
+use L;
+-- Reference: https://publishersarchive.com/
+insert Publishers values('Pacific Press','1350 N. Kings Rd Nampa, ID 83687','(208) 465-2500'),
+						('Lost Horse Press','105 Lost Horse Lane Sandpoint, ID 83864','(208) 225-4410'),
+                        ('Koinonia House','P.O. Box D Coeur d Alene, ID','(208) 773-8524'),
+                        ('High Peak Press','1851 E Mackay Dr Meridian, ID','(208) 855-5086'),
+                        ('Canon Press','205 E 5th St # 2 PO Box 8729',NULL),
+                        ('Ahsahta Press','1910 University Drive Boise, ID 83725-1525','208-426-3134'),
+                        ('Burgoyne & Burgoyne Publishers','1637 Damon Way Salt Lake City, UT','(801) 277-8977'),
+                        ('Cedar Fort Inc','2373 W 700 S Springville, UT','(801) 489-4084');
+-- Reference: https://www.boisepubliclibrary.org/locations/
+INSERT Library_Branches (BranchName) VALUES('Main Library'),('Library! at Bown Crossing'),
+										('Library! at Cole & Ustick'),('Library! at Collister'),
+                                        ('Library! at Hillcrest'),('Hidden Springs Branch Library');
+-- Reference: SO and E database
+INSERT Borrowers (Name_, Address, Phone) VALUES ("Suzanne Viescas"	,"15127 NE 24th, #383"	,"(208) 555-2686"),
+("William Thompson"	,"122 Spring River Drive"	,"(208) 555-2681"),
+("Gary Hallmark"	,"Route 2, Box 203B"	,"(208) 555-2676"),
+("Robert Brown"	,"672 Lamont Ave"	,"(208) 555-2491"),
+("Dean McCrae"	,"4110 Old Redmond Rd."	,"(208) 555-2506"),
+("John Viescas"	,"15127 NE 24th, #383"	,"(208) 555-2511"),
+("Mariya Sergienko"	,"901 Pine Avenue"	,"(208) 555-2526"),
+("Neil Patterson"	,"233 West Valley Hwy"	,"(208) 555-2541"),
+("Andrew Cencini"	,"507 - 20th Ave. E. Apt. 2A"	,"(208) 555-2601"),
+("Angel Kennedy"	,"667 Red River Road"	,"(208) 555-2571"),
+("Alaina Hallmark"	,"Route 2, Box 203B"	,"(208) 555-2631"),
+("Liz Keyser"	,"13920 S.E. 40th Street"	,"(208) 555-2556"),
+("Rachel Patterson"	,"2114 Longview Lane"	,"(208) 555-2546"),
+("Sam Abolrous"	,"611 Alpine Drive"	,"(208) 555-2611"),
+("Darren Gehring"	,"2601 Seaview Lane"	,"(208) 555-2616"),
+("Jim Wilson"	,"101 NE 88th"	,"(208) 555-2636"),
+("Manuela Seidel"	,"66 Spring Valley Drive"	,"(208) 555-2641"),
+("David Smith"	,"311 20th Ave. N.E."	,"(208) 555-2646"),
+("Zachary Ehrlich"	,"12330 Kingman Drive"	,"(208) 555-2721"),
+("Joyce Bonnicksen"	,"2424 Thames Drive"	,"(208) 555-2726"),
+("Estella Pundt"	,"2500 Rosales Lane"	,"(208) 555-9938"),
+("Caleb Viescas"	,"4501 Wetland Road"	,"(208) 555-0037"),
+("Julia Schnebly"	,"2343 Harmony Lane"	,"(208) 555-9936"),
+("Mark Rosales"	,"323 Advocate Lane"	,"(208) 555-2286"),
+("Maria Patterson"	,"3445 Cheyenne Road"	,"(208) 555-2291"),
+("Kirk DeGrasse"	,"455 West Palm Ave"	,"(208) 555-2311"),
+("Luke Patterson"	,"877 145th Ave SE"	,"(208) 555-2316"),
+("Jeffrey Tirekicker"	,"19541 104th Ave NE"	,"(208) 555-9999"),
+("Doris Hartwig"	,"4726 - 11th Ave. N.E."	,"(208) 555-2671"),
+("Deb Waldal"	,"908 W. Capital Way"	,"(208) 555-2496"),
+("Peter Brehm"	,"722 Moss Bay Blvd."	,"(208) 555-2501"),
+("Elizabeth Hallmark"	,"Route 2, Box 203B"	,"(208) 555-2521"),
+("Matt Berg"	,"908 W. Capital Way"	,"(208) 555-2581"),
+("Sarah Thompson"	,"2222 Springer Road"	,"(208) 555-2626"),
+("Kerry Patterson"	,"777 Fenexet Blvd"	,"(208) 555-0399"),
+("Carol Viescas"	,"754 Fourth Ave"	,"(208) 555-2296");
+									
+insert into L.Books (AuthorName, Title , Name_) values('Joe Hill','The Fireman','Pacific Press'),
+													('Smith','Intro to Computers','High Peak Press'),
+													('Navathe','Database Fundamentals','Canon Press'),
+													('Silberschatz','Database Concepts','High Peak Press'),
+													('Navathe','Database Programming','Canon Press');
+insert into L.Book_Copies (NoOfCopies, BookId, BranchId) values(10,100001,101), (10,100001,106),(5,100001,102),(5,100001,104),
+																(20,100002,102),(8,100002,103),(5,100002,106),
+                                                                (5,100003,101),(17,100003,104),(7,100003,105),
+                                                                (8,100004,103),(2,100004,105),
+                                                                (9,100005,104), (15,100005,102);                                                                
+insert into Book_Loans set BranchId=101, BookId=100001, CardNo=1001;

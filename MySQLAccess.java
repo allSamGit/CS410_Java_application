@@ -270,7 +270,7 @@ public class MySQLAccess {
 		        String Br = rs.getString("Borrower");
 		        System.out.println("BookID: "+BID+"\t");
 		        System.out.println("BookTitle: "+BT+"\t");
-		        System.out.println("BookTitle: "+Br+"\n");
+		        System.out.println("Borrower: "+Br+"\n");
 		    }
 
         } catch (SQLException ex) {
@@ -459,7 +459,7 @@ public class MySQLAccess {
                  	break;
                 case 6:
                 	if(args.length==2) {
-            		System.out.println("number of book copies from this branch");
+            		System.out.println("number of book copies from "+args[1]);
             		String bookTitle=args[0];
             		String libraryBranch=args[1];
             		returnCopiesNumber(connect,bookTitle, libraryBranch);
@@ -496,7 +496,7 @@ public class MySQLAccess {
             	
             	if(menuEntry==1) {
             		System.err.println("Usage : <bookId,authorName,title,publisherName,bookCopyId,numCopies,branchId>" + 
-            				" ex:200001 Saman Rastgar BigBoy Pacific Press 30000002 14 106");       	 
+            				" ex:200001 \"Mary Ellen Season\" \"Honeysuckle Season\" \"Pacific Press\" \"30000002\" \"14\" \"106\" ");       	 
             	}
             	if(menuEntry==2) {
             		System.err.println("Usage: <bookLoanId,dateOut ,branchId ,bookId ,cardNo> "
@@ -507,13 +507,13 @@ public class MySQLAccess {
             				+ " ex : 101 100001 1001");
             	}
             	if(menuEntry==4) {
-            		System.err.println("Usage:<libraryBranch> ex : Main Library");
+            		System.err.println("Usage:<libraryBranch> ex : \"Main Library\" ");
             	}
             	if(menuEntry==5) {
-            		System.err.println("Usage:<borrower> ex: Suzanne Viescas");
+            		System.err.println("Usage:<borrower> ex: \"Suzanne Viescas\" ");
             	}
             	if(menuEntry==6) {
-            		System.err.println("Usage: <bookTitle, libraryBranch> ex: Intro to Computers  Library! at Bown Crossing ");
+            		System.err.println("Usage: <bookTitle, libraryBranch> ex: \"Intro to Computers\"  \"Library! at Bown Crossing\" ");
             	}
 
             }
