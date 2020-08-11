@@ -111,8 +111,9 @@ public class MySQLAccess {
                   
                   writeResultSetBorrower(resultSet);
                   
-                  //Menu to choose from    
+                  //Menu to choose from                 
                   menu(args);
+                  
                           
             // Remove the inserted row
             
@@ -172,9 +173,6 @@ public class MySQLAccess {
 		PreparedStatement stmt = null;
 
 		
-		DateFormat df = new SimpleDateFormat("YYYY/MM/DD");
-		Date dateobj = new Date();
-		System.out.println(df.format(dateobj));
 
 		try {
 			stmt = connect.prepareStatement("call check_out(?,?,?,?,?,?)");
@@ -311,10 +309,10 @@ public class MySQLAccess {
                     // also possible to get the columns via the column number
                     // which starts at 1
                 	String PublisherName = resultSet.getString("Name_");
-                	String PublisherAdress = resultSet.getString("Address");
+                	String PublisherAddress = resultSet.getString("Address");
                 	String PublisherPhone = resultSet.getString("Phone");               	              	
                 	System.out.print("Name: "+ PublisherName + "\t");
-                	System.out.print("Address: "+ PublisherPhone+ "\t");
+                	System.out.print("Address: "+ PublisherAddress+ "\t");
                 	System.out.print("Phone: "+PublisherPhone+"\n");
                 }
             }
@@ -366,7 +364,7 @@ public class MySQLAccess {
             public void menu(String[] args) throws Exception {
             	
                    
-            	if(args.length > 0) {
+            	
             		
             	
             	showMenu();           	
@@ -374,22 +372,31 @@ public class MySQLAccess {
             	Scanner scan=new Scanner(System.in);
             	int menuEntry=scan.nextInt();
             	
-            	switch(menuEntry) {
             	
+            	switch(menuEntry) {
             	
                case 1: 
                 	if( args.length>= 3) {
                 		
-                	System.out.println("argument 1"+args[0]);
-                	System.out.println("argument 1"+args[1]);
-                	System.out.println("argument 1"+args[2]);
+                		
+                		int bookId = Integer.parseInt(args[0]);
+                		String authorName = args[1];
+                		String title=args[2];
+                		String publisherName=args[3];
+                		
+                		int bookCopyId=Integer.parseInt(args[4]);
+                		int numCopies=Integer.parseInt(args[5]);
+                		int branchId=Integer.parseInt(args[6]);
 
-            	  // addBook(connect,200001,"Saman Rastgar","Big Boy","Pacific Press");
-            	  //  addBookCopies(connect,30000002,14,100001,106);
+
+                		addBook(connect,bookId,authorName,title,publisherName);
+                		addBookCopies(connect,bookCopyId,numCopies,bookId,branchId);
+            	   // addBook(connect,200001,"Saman Rastgar","Big Boy","Pacific Press");
+            	   // addBookCopies(connect,30000002,14,200001,106);
             	    
                 	}
                 	else {
-                        NotValidNumArguments(args);
+                		printUsage(menuEntry,args);
                     }
             	    break;
             	    
@@ -407,8 +414,8 @@ public class MySQLAccess {
             		//cmd : 1 2020-09-25 101 100001 1001
             	    //addBookLoans(connect, 1,"2020-09-25" ,101 ,100001 ,1001);
                 	}
-                	else {
-                        NotValidNumArguments(args);
+                	else {                   
+                		printUsage(menuEntry,args);
                      }
             	    break;
                 case 3: 
@@ -423,7 +430,7 @@ public class MySQLAccess {
             	    //returnBook(connect,101,100001,1001);
                 	}
                 	else {
-                      NotValidNumArguments(args);
+                		printUsage(menuEntry,args);
                     }            	    
                 	break;
                 	
@@ -435,7 +442,7 @@ public class MySQLAccess {
             	    //displayLibBranchBooks(connect,"Main Library");
                 	}
                 	else {
-                      NotValidNumArguments(args);
+                		printUsage(menuEntry,args);
                     }
             	    break;
                 case 5:
@@ -446,43 +453,30 @@ public class MySQLAccess {
                  	//borrowersBook(connect,"Suzanne Viescas");
                 	}
                 	else {
-                        NotValidNumArguments(args);
+
+                        printUsage(menuEntry,args);
                     }
                  	break;
                 case 6:
                 	if(args.length==2) {
-            		System.out.println("number of copies from this branch");
+            		System.out.println("number of book copies from this branch");
             		String bookTitle=args[0];
             		String libraryBranch=args[1];
             		returnCopiesNumber(connect,bookTitle, libraryBranch);
             	    //returnCopiesNumber(connect,"Intro to Computers", "Library! at Bown Crossing");
                 	}
             	    else {
-                        NotValidNumArguments(args);
+                        printUsage(menuEntry,args);
                     }
             	    break;
             	default:
             		System.out.println("The number is not valid");
-            	}
-            	
-            	
-            	
-            	
-            	            	
-            	
+            	}            	
+         
+            	  	
             	scan.close();
             	
-            	
-            	}
-            	
-            	else {
-            		System.out.println("Enter the appropriate arguments in the program");
-            	}
-                
-               
-                
-              
-                
+    
             }
             private void showMenu() {
             	
@@ -493,6 +487,35 @@ public class MySQLAccess {
             	System.out.println("(4)Display the books at a library branch.");
             	System.out.println("(5)Display the books checked out to a borrower.");
             	System.out.println("(6)Select a book, and list the number of copies checked out from each branch.");
+            }
+            
+            private void printUsage(int menuEntry,String[] args) {
+            	
+            	
+            	NotValidNumArguments(args);
+            	
+            	if(menuEntry==1) {
+            		System.err.println("Usage : <bookId,authorName,title,publisherName,bookCopyId,numCopies,branchId>" + 
+            				" ex:200001 Saman Rastgar BigBoy Pacific Press 30000002 14 106");       	 
+            	}
+            	if(menuEntry==2) {
+            		System.err.println("Usage: <bookLoanId,dateOut ,branchId ,bookId ,cardNo> "
+            				+ " ex : 1 2020-09-25 101 100001 1001");
+            	}
+            	if(menuEntry==3) {
+            		System.err.println("Usage: <branchId ,bookId ,cardNo> "
+            				+ " ex : 101 100001 1001");
+            	}
+            	if(menuEntry==4) {
+            		System.err.println("Usage:<libraryBranch> ex : Main Library");
+            	}
+            	if(menuEntry==5) {
+            		System.err.println("Usage:<borrower> ex: Suzanne Viescas");
+            	}
+            	if(menuEntry==6) {
+            		System.err.println("Usage: <bookTitle, libraryBranch> ex: Intro to Computers  Library! at Bown Crossing ");
+            	}
+
             }
             
             private void NotValidNumArguments(String[] args) {
