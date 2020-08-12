@@ -100,4 +100,11 @@ create index Book_Loans04 on Book_Loans(CardNo);
 create fulltext index Title on Books(Title);
 create index Phone using hash on  Borrowers(Phone);
 
+CREATE TABLE Audit (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username varchar(100) NOT NULL,
+    action_ VARCHAR(50) DEFAULT NULL,
+	changedate DATETIME DEFAULT NULL
+);
+
 
