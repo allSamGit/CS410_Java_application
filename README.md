@@ -28,7 +28,7 @@ Any directions to help the instructor install or operate the application.
 7.Now go back to your java IDE and run the program.
 
 8.For each case in the menu use the appropriate command line argument(Can be entered manually in eclipse or in console):
-	
+
 	Usage : <bookId,authorName,title,publisherName,bookCopyId,numCopies,branchId>
         ex: 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106        	 
 
@@ -59,14 +59,13 @@ to run:
 ## ***** Important ******
 To reset the database to the default state after each run use these queries:
 
-'''
+
      DELETE FROM `library`.`publishers` WHERE (`Name_` = 'Anna');    	
      DELETE FROM `library`.`borrowers` WHERE (`CardNo` = '31');	
      DELETE FROM `library`.`library_branches` WHERE (`BranchId` = '6');	
      DELETE FROM `library`.`book_copies` WHERE (`BookCopyId` = '30000002');		
      DELETE FROM `library`.`books` WHERE (`BookId` = '200001');	
-'''
- 
+
  ## Results
  
  Run these queries for each of the options:
