@@ -70,7 +70,7 @@ To reset the database to the default state after each run use these queries:
  
  Run these queries for each of the options:
  
- * option 1: select * from books;        
+ * option 1:   select * from books;        
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/j623D2S/option1-addbook.png" alt="option1-addbook" border="0"></a> 
 	     select * from book_copies;    
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/52shPY3/option1-addbookcopies.png" alt="option1-addbookcopies" border="0"></a>  
