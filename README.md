@@ -29,15 +29,13 @@ Any directions to help the instructor install or operate the application.
 
 8.For each case in the menu use the appropriate command line argument(Can be entered manually in eclipse or in console):
 	
-	
-	
-	Usage : <bookId,authorName,title,publisherName,bookCopyId,numCopies,branchId>" + 
-            				" ex:200001 \"Mary Ellen Season\" \"Honeysuckle Season\" \"Pacific Press\" \"30000002\" \"14\" \"106\" ");       	 
+	Usage : <bookId,authorName,title,publisherName,bookCopyId,numCopies,branchId>
+        ex: 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106        	 
 
-        Usage: <bookLoanId,dateOut ,branchId ,bookId ,cardNo> "+ " ex : 1 2020-09-25 101 100001 1001");
+        Usage: <bookLoanId,dateOut ,branchId ,bookId ,cardNo>  ex : 1 2020-09-25 101 100001 1001"
             	
             	
-        "Usage: <branchId ,bookId ,cardNo> ex : 101 100001 1001
+        Usage: <branchId ,bookId ,cardNo> ex : 101 100001 1001
            
         Usage:<libraryBranch> ex : "Main Library" 
                         	
@@ -45,10 +43,20 @@ Any directions to help the instructor install or operate the application.
 	            	
         Usage: <bookTitle, libraryBranch> ex: "Intro to Computers"  "Library! at Bown Crossing" 
 	
-to setup Command line argument(linux):
+to setup Command line argument for each option(linux):
 
-javac *.java 
-java Main.java 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106
+to compile : javac *.java 
+
+to run:
+
+option 1: java Main.java 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106
+option 2: java Main.java 1 2020-09-25 101 100001 1001
+option 3: java Main.java 101 100001 1001
+option 4: java Main.java "Main Library"
+option 5: java Main.java Suzanne Viescas
+option 6: java Main.java "Intro to Computers"  "Library! at Bown Crossing"
+
+
 
 
 
