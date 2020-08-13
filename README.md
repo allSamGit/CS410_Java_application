@@ -59,7 +59,7 @@ to run:
 ## ***** Important ******
 To reset the database to the default state after each run use these queries:
 
-'''sql
+'''mysql
  DELETE FROM `library`.`publishers` WHERE (`Name_` = 'Anna');
  DELETE FROM `library`.`borrowers` WHERE (`CardNo` = '31');
  DELETE FROM `library`.`library_branches` WHERE (`BranchId` = '6');
