@@ -50,14 +50,14 @@ INSERT Borrowers (Name_, Address, Phone) VALUES ("Suzanne Viescas"	,"15127 NE 24
 ("Kerry Patterson"	,"777 Fenexet Blvd"	,"(208) 555-0399"),
 ("Carol Viescas"	,"754 Fourth Ave"	,"(208) 555-2296");
 									
-insert into L.Books (AuthorName, Title , Name_) values('Joe Hill','The Fireman','Pacific Press'),
+insert into Library.Books (AuthorName, Title , Name_) values('Joe Hill','The Fireman','Pacific Press'),
 													('Smith','Intro to Computers','High Peak Press'),
 													('Navathe','Database Fundamentals','Canon Press'),
 													('Silberschatz','Database Concepts','High Peak Press'),
 													('Navathe','Database Programming','Canon Press');
-insert into L.Book_Copies (NoOfCopies, BookId, BranchId) values(10,100001,101), (10,100001,106),(5,100001,102),(5,100001,104),
+insert into Library.Book_Copies (NoOfCopies, BookId, BranchId) values(10,100001,101), (10,100001,106),(5,100001,102),(5,100001,104),
 																(20,100002,102),(8,100002,103),(5,100002,106),
                                                                 (5,100003,101),(17,100003,104),(7,100003,105),
                                                                 (8,100004,103),(2,100004,105),
                                                                 (9,100005,104), (15,100005,102);                                                                
-insert into Book_Loans set BranchId=101, BookId=100001, CardNo=1001;
+insert into Library.Book_Loans set BranchId=101, BookId=100001, CardNo=1001;
