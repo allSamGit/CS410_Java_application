@@ -1,4 +1,4 @@
-use L;
+use Library;
 -- Reference: https://publishersarchive.com/
 insert Publishers values('Pacific Press','1350 N. Kings Rd Nampa, ID 83687','(208) 465-2500'),
 						('Lost Horse Press','105 Lost Horse Lane Sandpoint, ID 83864','(208) 225-4410'),
