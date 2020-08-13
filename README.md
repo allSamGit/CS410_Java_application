@@ -17,10 +17,10 @@ Any directions to help the instructor install or operate the application.
         	// TO use MySQL remotely (e.g., your laptop to onyx)
         	// Replace <var2> and <var4> with your own data (from presentation slide)
 			connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3309/library?"
+                    .getConnection("jdbc:mysql://localhost:3307/Library?"
                     	+ " verifyServerCertificate=false&useSSL=true&"
                         + "user=msandbox&password=7334&"
-                    	+ "serverTimezone=UTC");
+                    	+ "serverTimezone=UTC"); 
                       
 4. Connect to your database using your username and password you setup for onyx.
 5.open a sql query tab and paste DDL.txt and DML.txt in your query and run it.
