@@ -82,7 +82,7 @@ To reset the database to the default state after each run use these queries:
  
  * option 4:   
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/r62BNBX/java-option4.png" alt="java-option4" border="0"></a>  
- * option 5: 
+ * option 5:   
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/CMyJN4F/java-option5.png" alt="java-option5" border="0"></a>  
  * option 6:
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/h9qvgHh/java-option6.png" alt="java-option6" border="0"></a>  
