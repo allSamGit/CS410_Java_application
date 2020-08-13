@@ -22,5 +22,29 @@ Any directions to help the instructor install or operate the application.
                         + "user=msandbox&password=7334&"
                     	+ "serverTimezone=UTC");
                       
-4.Download the files in your own project directory and then try to test your program:
+4. Connect to your database using your username and password you setup for onyx.
+5.open a sql query tab and paste DDL.txt and DML.txt in your query and run it.
+6.Import modules.sql as well in your database and run it.
+7.Now go back to your java IDE and run the program.
+
+8.For each case in the menu use the appropriate command line argument(Can be entered manually in eclipse or in console):
+	
+	
+	
+	Usage : <bookId,authorName,title,publisherName,bookCopyId,numCopies,branchId>" + 
+            				" ex:200001 \"Mary Ellen Season\" \"Honeysuckle Season\" \"Pacific Press\" \"30000002\" \"14\" \"106\" ");       	 
+
+        Usage: <bookLoanId,dateOut ,branchId ,bookId ,cardNo> "+ " ex : 1 2020-09-25 101 100001 1001");
+            	
+            	
+        "Usage: <branchId ,bookId ,cardNo> ex : 101 100001 1001
+           
+        Usage:<libraryBranch> ex : "Main Library" 
+                        	
+        Usage:<borrower> ex: "Suzanne Viescas" 
+	            	
+        Usage: <bookTitle, libraryBranch> ex: "Intro to Computers"  "Library! at Bown Crossing" 
+
+
+
 
