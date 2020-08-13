@@ -77,14 +77,14 @@ To reset the database to the default state after each run use these queries:
  * option 2: select * from book_loans;  
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/rMX7S5W/option2.png" alt="option2" border="0"></a>
 	     
- * option 3:\ select * from book_loans; ( to check the entry is gone)\
+ * option 3: select * from book_loans; ( to check the entry is gone)\
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/10mCbXQ/option3.png" alt="option3" border="0"></a>
  
- * option 4:\ 
+ * option 4:   
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/r62BNBX/java-option4.png" alt="java-option4" border="0"></a>
- * option 5:\ 
+ * option 5: 
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/CMyJN4F/java-option5.png" alt="java-option5" border="0"></a>
- * option 6:\
+ * option 6:
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/h9qvgHh/java-option6.png" alt="java-option6" border="0"></a>
  
 
