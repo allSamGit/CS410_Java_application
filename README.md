@@ -6,4 +6,4 @@ Any directions to help the instructor install or operate the application.
 check if you are connected your java database using port forwarding.We used mobaXterm
 
 
-![Connection](https://ibb.co/4NmpjF6/dbconnection.png)
+![Connection](https://ibb.co/4NmpjF6)
