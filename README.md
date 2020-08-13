@@ -44,6 +44,11 @@ Any directions to help the instructor install or operate the application.
         Usage:<borrower> ex: "Suzanne Viescas" 
 	            	
         Usage: <bookTitle, libraryBranch> ex: "Intro to Computers"  "Library! at Bown Crossing" 
+	
+to setup Command line argument(linux):
+
+javac *.java 
+java Main.java 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106
 
 
 
