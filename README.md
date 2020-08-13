@@ -49,12 +49,12 @@ to compile : javac *.java
 
 to run:
 
-option 1: java Main.java 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106
-option 2: java Main.java 1 2020-09-25 101 100001 1001
-option 3: java Main.java 101 100001 1001
-option 4: java Main.java "Main Library"
-option 5: java Main.java Suzanne Viescas
-option 6: java Main.java "Intro to Computers"  "Library! at Bown Crossing"
+*option 1: java Main.java 200001 "Mary Ellen Season" "Honeysuckle Season" "Pacific Press" 30000002 14 106
+*option 2: java Main.java 1 2020-09-25 101 100001 1001
+*option 3: java Main.java 101 100001 1001
+*option 4: java Main.java "Main Library"
+*option 5: java Main.java Suzanne Viescas
+*option 6: java Main.java "Intro to Computers"  "Library! at Bown Crossing"
 
 
 
