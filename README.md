@@ -60,7 +60,7 @@ to run:
 To reset the database to the default state after each run use these queries:
 
 
- DELETE FROM `library`.`publishers` WHERE (`Name_` = 'Anna');	
+ DELETE FROM `library`.`publishers` WHERE (`Name_` = 'Anna');    	
  DELETE FROM `library`.`borrowers` WHERE (`CardNo` = '31');	
  DELETE FROM `library`.`library_branches` WHERE (`BranchId` = '6');	
  DELETE FROM `library`.`book_copies` WHERE (`BookCopyId` = '30000002');		
