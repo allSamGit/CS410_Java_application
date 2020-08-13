@@ -56,8 +56,8 @@ to run:
 * option 5: java Main.java Suzanne Viescas
 * option 6: java Main.java "Intro to Computers"  "Library! at Bown Crossing"
 
-##Important
-To reset the database to the default data use these queries( needed after each run):
+## Important
+To reset the database to the default state after each run use these queries:
 
 DELETE FROM `library`.`publishers` WHERE (`Name_` = 'Anna');
 DELETE FROM `library`.`borrowers` WHERE (`CardNo` = '31');
