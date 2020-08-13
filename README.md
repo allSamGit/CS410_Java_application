@@ -43,7 +43,7 @@ Any directions to help the instructor install or operate the application.
 	            	
         Usage: <bookTitle, libraryBranch> ex: "Intro to Computers"  "Library! at Bown Crossing" 
 	
-to setup Command line argument for each option(linux):
+ot setup Command line argument for each option(linux):
 
 to compile : javac *.java 
 
@@ -56,7 +56,7 @@ to run:
 * option 5: java Main.java Suzanne Viescas
 * option 6: java Main.java "Intro to Computers"  "Library! at Bown Crossing"
 
-## Important
+## ***** Important ******
 To reset the database to the default state after each run use these queries:
 
  DELETE FROM `library`.`publishers` WHERE (`Name_` = 'Anna');
@@ -64,6 +64,9 @@ To reset the database to the default state after each run use these queries:
  DELETE FROM `library`.`library_branches` WHERE (`BranchId` = '6');
  DELETE FROM `library`.`book_copies` WHERE (`BookCopyId` = '30000002');
  DELETE FROM `library`.`books` WHERE (`BookId` = '200001');
+ 
+ 
+ 
 
 
 
