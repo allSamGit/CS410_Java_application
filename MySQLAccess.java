@@ -26,7 +26,7 @@ public class MySQLAccess {
         	// TO use MySQL remotely (e.g., your laptop to onyx)
         	// Replace <var2> and <var4> with your own data (from presentation slide)
 			connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3309/library?"
+                    .getConnection("jdbc:mysql://localhost:3307/Library?"
                     	+ " verifyServerCertificate=false&useSSL=true&"
                         + "user=msandbox&password=7334&"
                     	+ "serverTimezone=UTC"); 
@@ -38,16 +38,16 @@ public class MySQLAccess {
             
 
             // PreparedStatements can use variables and are more efficient AND MORE SECURE!
-            String tablePublisher="publishers";
-            String tableLibBranches="library_branches";
-            String tableBorrowers="borrowers";
+            String tablePublisher="Publishers";
+            String tableLibBranches="Library_Branches";
+            String tableBorrowers="Borrowers";
             
             
 
       	
                 //insert into  Publishers
                 
-                preparedStatement = connect.prepareStatement("insert into  publishers values (?, ?, ?)");
+                preparedStatement = connect.prepareStatement("insert into  Publishers values (?, ?, ?)");
                 
                 preparedStatement.setString(1, "Anna");
                 preparedStatement.setString(2, "265 Boise");
@@ -60,7 +60,7 @@ public class MySQLAccess {
        
                 //insert into borrowers
                 
-                preparedStatement = connect.prepareStatement("insert into  borrowers values (?, ?, ?, ?)");
+                preparedStatement = connect.prepareStatement("insert into  Borrowers values (?, ?, ?, ?)");
           
                 preparedStatement.setString(1, "31");
                 preparedStatement.setString(2, "Sam");
@@ -74,7 +74,7 @@ public class MySQLAccess {
                 
                 //insert into  Library_Branches  
                 
-                preparedStatement = connect.prepareStatement("insert into  library_branches values (?, ?)");
+                preparedStatement = connect.prepareStatement("insert into  Library_Branches values (?, ?)");
                 
                 preparedStatement.setInt(1, 6);
                 preparedStatement.setString(2, "BSU");          
