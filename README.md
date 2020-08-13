@@ -69,12 +69,12 @@ To reset the database to the default state after each run use these queries:
  
  Run these queries for each of the options:
  
- * option 1: select * from books;<br />   
+ * option 1: select * from books;     <br />   
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/d2j9cQJ/option1-addbook.png" alt="option1-addbook" border="0"></a>
-	     select * from book_copies;  
+	     select * from book_copies;   <br />  
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/G2tRPkM/option1-addbookcopies.png" alt="option1-addbookcopies" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>upload image</a><br />
 	     
- * option 2:\ select * from book_loans;\
+ * option 2: select * from book_loans;  
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/rMX7S5W/option2.png" alt="option2" border="0"></a>
 	     
  * option 3:\ select * from book_loans; ( to check the entry is gone)\
